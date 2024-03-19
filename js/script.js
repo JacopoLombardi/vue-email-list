@@ -8,8 +8,9 @@ createApp({
    data(){
       return{
 
-         result: '',
+         resultArray: [],
          apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
+         randomEmail: '',
       };
    },
 
@@ -18,13 +19,27 @@ createApp({
    
    methods:{
 
-      getApi(){
-         axios.get(this.apiUrl)
-         .then((answer) => {
 
-         console.log(answer)
-      });
-      }
+      
+
+
+
+      getApi(){
+        
+            axios.get(this.apiUrl)
+
+            .then((answer) => {
+               this.randomEmail = answer.data.response;
+               console.log(this.randomEmail)
+               this.resultArray.push(this.randomEmail);
+               this.randomEmail = '';
+               console.log(this.resultArray)
+
+            });
+         
+      },
+
+
 
    },
 
