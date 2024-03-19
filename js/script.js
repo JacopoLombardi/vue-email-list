@@ -8,6 +8,8 @@ createApp({
    data(){
       return{
 
+         result: '',
+         apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
       };
    },
 
@@ -15,14 +17,22 @@ createApp({
 
    
    methods:{
-     
+
+      getApi(){
+         axios.get(this.apiUrl)
+         .then((answer) => {
+
+         console.log(answer)
+      });
+      }
+
    },
 
 
 
 
    mounted(){
-
+      this.getApi()
    }
 
 }).mount('#app');
