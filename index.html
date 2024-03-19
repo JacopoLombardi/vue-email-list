@@ -22,10 +22,10 @@
 
       <div class="container  mt-5">
 
-         <button @click="forLoop" class="btn btn-primary  my-3">clicca</button>
+         <button @click="forLoop" class="btn  btn-primary  my-3">clicca</button>
 
          <ul
-            v-if="resultArray.length === 10"
+            v-if="resultArray.length >= 10"
          >
             <li
                v-for="element in resultArray"

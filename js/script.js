@@ -10,7 +10,7 @@ createApp({
 
          resultArray: [],
          apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
-         randomEmail: '',
+         randomEmail: ''
 
       };
    },
@@ -19,14 +19,14 @@ createApp({
 
    
    methods:{
-
+      // ciclo la funzione della chiamata per 10 volte
       forLoop(){
          for(let i = 0; i<10; i++){
-            this.getApi()
+            this.getApi();
          }
       },
 
-
+      // chiamo la API e ricevo una risposta che utilizzo a mio piacere
       getApi(){
          axios.get(this.apiUrl)
    
